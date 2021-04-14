@@ -7,19 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C437741B2620101B0059FD48 /* rightAns.wav in Resources */ = {isa = PBXBuildFile; fileRef = C437741A2620101B0059FD48 /* rightAns.wav */; };
+		C437741F262015410059FD48 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = C437741E262015410059FD48 /* victory.wav */; };
+		C4377422262015490059FD48 /* defeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = C4377421262015490059FD48 /* defeat.wav */; };
+		C450CC0326188B9500F121E8 /* checkAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450CC0226188B9500F121E8 /* checkAnswer.swift */; };
 		C47688002615E52F00CBB37B /* jsndsnlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47687FF2615E52F00CBB37B /* jsndsnlApp.swift */; };
 		C47688022615E52F00CBB37B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47688012615E52F00CBB37B /* ContentView.swift */; };
 		C47688042615E53000CBB37B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47688032615E53000CBB37B /* Assets.xcassets */; };
 		C47688072615E53000CBB37B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47688062615E53000CBB37B /* Preview Assets.xcassets */; };
+		C4ABC1012619DCFA00FBA281 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ABC1002619DCBB00FBA281 /* KeyboardView.swift */; };
+		C4FDABFC262379B200C26676 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDABFB262379B200C26676 /* GameSettings.swift */; };
+		C4FDAC0026237B8800C26676 /* MusicAndHowToPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDABFF26237B8800C26676 /* MusicAndHowToPlaying.swift */; };
+		C4FDAC0326237C2000C26676 /* TableScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDAC0226237C2000C26676 /* TableScores.swift */; };
+		C4FDAC0726237CFE00C26676 /* QuestionsAndTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDAC0626237CFE00C26676 /* QuestionsAndTimer.swift */; };
+		C4FDAC0F26238D9B00C26676 /* SwiftUIViewTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDAC0E26238D9B00C26676 /* SwiftUIViewTesting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C437741A2620101B0059FD48 /* rightAns.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rightAns.wav; sourceTree = "<group>"; };
+		C437741E262015410059FD48 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
+		C4377421262015490059FD48 /* defeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = defeat.wav; sourceTree = "<group>"; };
+		C450CC0226188B9500F121E8 /* checkAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnswer.swift; sourceTree = "<group>"; };
 		C47687FC2615E52F00CBB37B /* jsndsnl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jsndsnl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47687FF2615E52F00CBB37B /* jsndsnlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsndsnlApp.swift; sourceTree = "<group>"; };
 		C47688012615E52F00CBB37B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C47688032615E53000CBB37B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C47688062615E53000CBB37B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C47688082615E53000CBB37B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4ABC1002619DCBB00FBA281 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		C4FDABFB262379B200C26676 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		C4FDABFF26237B8800C26676 /* MusicAndHowToPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAndHowToPlaying.swift; sourceTree = "<group>"; };
+		C4FDAC0226237C2000C26676 /* TableScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableScores.swift; sourceTree = "<group>"; };
+		C4FDAC0626237CFE00C26676 /* QuestionsAndTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAndTimer.swift; sourceTree = "<group>"; };
+		C4FDAC0E26238D9B00C26676 /* SwiftUIViewTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewTesting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +53,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C450CC0F2618A6FA00F121E8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		C47687F32615E52F00CBB37B = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +81,12 @@
 			children = (
 				C47687FF2615E52F00CBB37B /* jsndsnlApp.swift */,
 				C47688012615E52F00CBB37B /* ContentView.swift */,
+				C4FDAC0C26238A8200C26676 /* StartView */,
+				C4FDAC0A26238A6000C26676 /* GameView */,
+				C450CC0226188B9500F121E8 /* checkAnswer.swift */,
+				C4FDAC0E26238D9B00C26676 /* SwiftUIViewTesting.swift */,
+				C4FDABFA2623797900C26676 /* Music */,
+				C450CC0F2618A6FA00F121E8 /* Data */,
 				C47688032615E53000CBB37B /* Assets.xcassets */,
 				C47688082615E53000CBB37B /* Info.plist */,
 				C47688052615E53000CBB37B /* Preview Content */,
@@ -67,6 +100,35 @@
 				C47688062615E53000CBB37B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C4FDABFA2623797900C26676 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				C437741A2620101B0059FD48 /* rightAns.wav */,
+				C437741E262015410059FD48 /* victory.wav */,
+				C4377421262015490059FD48 /* defeat.wav */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		C4FDAC0A26238A6000C26676 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDAC0226237C2000C26676 /* TableScores.swift */,
+				C4FDAC0626237CFE00C26676 /* QuestionsAndTimer.swift */,
+				C4ABC1002619DCBB00FBA281 /* KeyboardView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
+		C4FDAC0C26238A8200C26676 /* StartView */ = {
+			isa = PBXGroup;
+			children = (
+				C4FDABFF26237B8800C26676 /* MusicAndHowToPlaying.swift */,
+				C4FDABFB262379B200C26676 /* GameSettings.swift */,
+			);
+			path = StartView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +188,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C437741B2620101B0059FD48 /* rightAns.wav in Resources */,
 				C47688072615E53000CBB37B /* Preview Assets.xcassets in Resources */,
 				C47688042615E53000CBB37B /* Assets.xcassets in Resources */,
+				C4377422262015490059FD48 /* defeat.wav in Resources */,
+				C437741F262015410059FD48 /* victory.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +204,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47688022615E52F00CBB37B /* ContentView.swift in Sources */,
+				C4FDAC0726237CFE00C26676 /* QuestionsAndTimer.swift in Sources */,
+				C450CC0326188B9500F121E8 /* checkAnswer.swift in Sources */,
+				C4FDABFC262379B200C26676 /* GameSettings.swift in Sources */,
+				C4FDAC0326237C2000C26676 /* TableScores.swift in Sources */,
 				C47688002615E52F00CBB37B /* jsndsnlApp.swift in Sources */,
+				C4FDAC0026237B8800C26676 /* MusicAndHowToPlaying.swift in Sources */,
+				C4FDAC0F26238D9B00C26676 /* SwiftUIViewTesting.swift in Sources */,
+				C4ABC1012619DCFA00FBA281 /* KeyboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
