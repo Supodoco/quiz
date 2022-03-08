@@ -10,15 +10,8 @@ import AVFoundation
 
 struct ContentView: View {
     
-//    @State var alertRules = false
     @StateObject private var checkAnswer = UserSettings()
-//    @State var alertCheck = false
-//    @State var numberList = [0,1,2,3,4,5,6,7,8,9]
-//    @State var buttonView = true
     @State var alertActivate = false
-//    @State var number = 0.0
-//
-//    @State var settings = false
 
     var body: some View {
         ZStack {
@@ -52,15 +45,8 @@ struct ContentView: View {
                     }
                 
             } .padding(.all)
+        } .onAppear {
+            checkAnswer.downloadData(url: checkAnswer.urlData)
         }
     }
 }
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-        
-    }
-}
-

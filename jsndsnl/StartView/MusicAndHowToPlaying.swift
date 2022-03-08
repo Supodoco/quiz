@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MusicOffAndRules: View {
     @ObservedObject var checkAnswer: UserSettings
+    let rules = "Наберите число, которое ближе к правильному ответу. Кто будет ближе к правильному ответу получает +1 балл. Правильный ответ +2 балла."
 
     var body: some View {
         HStack {
@@ -34,8 +35,10 @@ struct MusicOffAndRules: View {
             }) {
                 Image(systemName: "questionmark")
             } .modifier(buttonMod(width: 50, height: 50))
-            .alert(isPresented: $checkAnswer.alertHowToPlay, content: {
-                Alert(title: Text("Как играть?"), message: Text("Наберите число, которое ближе к правильному ответу. Кто будет ближе к правильному ответу получает +1 балл. Правильный ответ +2 балла."), dismissButton: .default(Text("OK")))
+              .alert(isPresented: $checkAnswer.alertHowToPlay, content: {
+                 Alert(title: Text("Как играть?"),
+                       message: Text(rules),
+                       dismissButton: .default(Text("OK")))
             })
         }
     }

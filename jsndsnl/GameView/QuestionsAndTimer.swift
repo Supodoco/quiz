@@ -16,7 +16,6 @@ struct QuestionsAndTimer: View {
                 .fontWeight(.heavy)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20))
-//                            .scaledToFit()
                 .frame(width: 340, height: 170, alignment: .center)
             if checkAnswer.rightImage == true {
                 Image("right")
