@@ -34,8 +34,10 @@ struct KeyboardAndTappedText: View {
             
             Text(self.checkAnswer.tappedText)
                 .modifier(buttonMod(width: 260, height: 70))
-                .alert(isPresented: $checkAnswer.alertAfterFirstPlay, content: {
-                    Alert(title: Text("Ожидание второго игрока"), dismissButton: .default(Text("Продолжить")) {
+                .alert(isPresented: $checkAnswer.alertAfterFirstPlay,
+                       content: {
+                    Alert(title: Text("Ожидание второго игрока"),
+                          dismissButton: .default(Text("Продолжить")) {
                         checkAnswer.alertAfterFirstPlay = false
                         checkAnswer.playSecondContinue()
                     })
