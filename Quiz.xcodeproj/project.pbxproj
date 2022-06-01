@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C437741B2620101B0059FD48 /* rightAns.wav in Resources */ = {isa = PBXBuildFile; fileRef = C437741A2620101B0059FD48 /* rightAns.wav */; };
+		C437741B2620101B0059FD48 /* rightAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = C437741A2620101B0059FD48 /* rightAnswer.wav */; };
 		C437741F262015410059FD48 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = C437741E262015410059FD48 /* victory.wav */; };
 		C4377422262015490059FD48 /* defeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = C4377421262015490059FD48 /* defeat.wav */; };
 		C450CC0326188B9500F121E8 /* checkAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450CC0226188B9500F121E8 /* checkAnswer.swift */; };
@@ -16,6 +16,7 @@
 		C47688042615E53000CBB37B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47688032615E53000CBB37B /* Assets.xcassets */; };
 		C47688072615E53000CBB37B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47688062615E53000CBB37B /* Preview Assets.xcassets */; };
 		C4ABC1012619DCFA00FBA281 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ABC1002619DCBB00FBA281 /* KeyboardView.swift */; };
+		C4E47A8127D921DB0083DAEF /* ModelVersionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E47A8027D921DB0083DAEF /* ModelVersionApp.swift */; };
 		C4F326D827D7B621003B08E1 /* ModelQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F326D727D7B621003B08E1 /* ModelQuestions.swift */; };
 		C4FDABFC262379B200C26676 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDABFB262379B200C26676 /* GameSettings.swift */; };
 		C4FDAC0026237B8800C26676 /* MusicAndHowToPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FDABFF26237B8800C26676 /* MusicAndHowToPlaying.swift */; };
@@ -24,17 +25,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C437741A2620101B0059FD48 /* rightAns.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rightAns.wav; sourceTree = "<group>"; };
+		C437741A2620101B0059FD48 /* rightAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rightAnswer.wav; sourceTree = "<group>"; };
 		C437741E262015410059FD48 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
 		C4377421262015490059FD48 /* defeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = defeat.wav; sourceTree = "<group>"; };
 		C450CC0226188B9500F121E8 /* checkAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnswer.swift; sourceTree = "<group>"; };
-		C47687FC2615E52F00CBB37B /* jsndsnl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jsndsnl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C47687FC2615E52F00CBB37B /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47687FF2615E52F00CBB37B /* jsndsnlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsndsnlApp.swift; sourceTree = "<group>"; };
 		C47688012615E52F00CBB37B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C47688032615E53000CBB37B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C47688062615E53000CBB37B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C47688082615E53000CBB37B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4ABC1002619DCBB00FBA281 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		C4E47A8027D921DB0083DAEF /* ModelVersionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelVersionApp.swift; sourceTree = "<group>"; };
 		C4F326D727D7B621003B08E1 /* ModelQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelQuestions.swift; sourceTree = "<group>"; };
 		C4FDABFB262379B200C26676 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		C4FDABFF26237B8800C26676 /* MusicAndHowToPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAndHowToPlaying.swift; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 		C47687F32615E52F00CBB37B = {
 			isa = PBXGroup;
 			children = (
-				C47687FE2615E52F00CBB37B /* jsndsnl */,
+				C47687FE2615E52F00CBB37B /* Quiz */,
 				C47687FD2615E52F00CBB37B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,12 +66,12 @@
 		C47687FD2615E52F00CBB37B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C47687FC2615E52F00CBB37B /* jsndsnl.app */,
+				C47687FC2615E52F00CBB37B /* Quiz.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C47687FE2615E52F00CBB37B /* jsndsnl */ = {
+		C47687FE2615E52F00CBB37B /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
 				C47687FF2615E52F00CBB37B /* jsndsnlApp.swift */,
@@ -83,7 +85,7 @@
 				C47688082615E53000CBB37B /* Info.plist */,
 				C47688052615E53000CBB37B /* Preview Content */,
 			);
-			path = jsndsnl;
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		C47688052615E53000CBB37B /* Preview Content */ = {
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				C4F326D727D7B621003B08E1 /* ModelQuestions.swift */,
+				C4E47A8027D921DB0083DAEF /* ModelVersionApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,7 +116,7 @@
 		C4FDABFA2623797900C26676 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				C437741A2620101B0059FD48 /* rightAns.wav */,
+				C437741A2620101B0059FD48 /* rightAnswer.wav */,
 				C437741E262015410059FD48 /* victory.wav */,
 				C4377421262015490059FD48 /* defeat.wav */,
 			);
@@ -142,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C47687FB2615E52F00CBB37B /* jsndsnl */ = {
+		C47687FB2615E52F00CBB37B /* Quiz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C476880B2615E53000CBB37B /* Build configuration list for PBXNativeTarget "jsndsnl" */;
+			buildConfigurationList = C476880B2615E53000CBB37B /* Build configuration list for PBXNativeTarget "Quiz" */;
 			buildPhases = (
 				C47687F82615E52F00CBB37B /* Sources */,
 				C47687F92615E52F00CBB37B /* Frameworks */,
@@ -154,9 +157,9 @@
 			);
 			dependencies = (
 			);
-			name = jsndsnl;
+			name = Quiz;
 			productName = jsndsnl;
-			productReference = C47687FC2615E52F00CBB37B /* jsndsnl.app */;
+			productReference = C47687FC2615E52F00CBB37B /* Quiz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +189,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C47687FB2615E52F00CBB37B /* jsndsnl */,
+				C47687FB2615E52F00CBB37B /* Quiz */,
 			);
 		};
 /* End PBXProject section */
@@ -196,7 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C437741B2620101B0059FD48 /* rightAns.wav in Resources */,
+				C437741B2620101B0059FD48 /* rightAnswer.wav in Resources */,
 				C47688072615E53000CBB37B /* Preview Assets.xcassets in Resources */,
 				C47688042615E53000CBB37B /* Assets.xcassets in Resources */,
 				C4377422262015490059FD48 /* defeat.wav in Resources */,
@@ -217,6 +220,7 @@
 				C450CC0326188B9500F121E8 /* checkAnswer.swift in Sources */,
 				C4FDABFC262379B200C26676 /* GameSettings.swift in Sources */,
 				C4FDAC0326237C2000C26676 /* TableScores.swift in Sources */,
+				C4E47A8127D921DB0083DAEF /* ModelVersionApp.swift in Sources */,
 				C47688002615E52F00CBB37B /* jsndsnlApp.swift in Sources */,
 				C4FDAC0026237B8800C26676 /* MusicAndHowToPlaying.swift in Sources */,
 				C4ABC1012619DCFA00FBA281 /* KeyboardView.swift in Sources */,
@@ -348,10 +352,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"jsndsnl/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Quiz/Preview Content\"";
 				DEVELOPMENT_TEAM = 8AP3BS5F75;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = jsndsnl/Info.plist;
+				INFOPLIST_FILE = Quiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -370,10 +374,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"jsndsnl/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Quiz/Preview Content\"";
 				DEVELOPMENT_TEAM = 8AP3BS5F75;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = jsndsnl/Info.plist;
+				INFOPLIST_FILE = Quiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C476880B2615E53000CBB37B /* Build configuration list for PBXNativeTarget "jsndsnl" */ = {
+		C476880B2615E53000CBB37B /* Build configuration list for PBXNativeTarget "Quiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C476880C2615E53000CBB37B /* Debug */,

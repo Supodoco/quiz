@@ -10,7 +10,7 @@ import AVFoundation
 
 struct ContentView: View {
     
-    @StateObject private var checkAnswer = UserSettings()
+    @StateObject private var checkAnswer = BrainGameController()
     @State var alertActivate = false
 
     var body: some View {
@@ -46,7 +46,8 @@ struct ContentView: View {
                 
             } .padding(.all)
         } .onAppear {
-            checkAnswer.downloadData(url: checkAnswer.urlData)
+            checkAnswer.checkVersionData(url: checkAnswer.urlVersionData)
         }
+        
     }
 }

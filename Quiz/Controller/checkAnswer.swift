@@ -11,21 +11,22 @@ import AVFoundation
 
 
 
-class UserSettings: ObservableObject {
+class BrainGameController: ObservableObject {
+
+    var urlData: String = "https://pastebin.com/raw/HXE9N1P0" // JSON
+    var urlVersionData: String = "https://pastebin.com/raw/PXQXSPRZ" // Version of Data
+    var version: Void = UserDefaults.standard.set(127, forKey: "version")
     
-    @Published var keyList1: [String : Int] = [
-        
+    var data89: [String: Int] = UserDefaults.standard.object(forKey: "questions") as? [String: Int] ??
+    [
         "Сколько персонажей на картине Тайная вечеря?": 13,
         "Сколько спутников у Земли?": 1,
         "Сколько букв в слове?": 5,
         "Сколько на Земле материков начинаются на букву А?": 5,
         "Сколько музыкантов в квинтете?": 5,
-        
     ]
-    
-    var urlData: String = "https://pastebin.com/raw/HXE9N1P0"
-    
-    func downloadData(url: String) {
+
+    func checkVersionData(url: String) { // Проверка версии
         guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
@@ -34,16 +35,42 @@ class UserSettings: ObservableObject {
             }
             guard let data = data else { return }
             do {
-                let questions = try JSONDecoder().decode([QuestionsAnswers].self, from: data)
-                for element in questions {
-                    DispatchQueue.main.async {
-                        self.keyList1[element.question] = element.answer
-                    }
+                let version = try JSONDecoder().decode([ModelVersionApp].self, from: data)
+                if let version = version.first?.version {
+                    print(version)
+                    if UserDefaults.standard.integer(forKey: "version") < version {
+                        self.downloadData(url: self.urlData)
+                        UserDefaults.standard.set(version, forKey: "version")
+                        
+                    } 
                 }
             } catch {
                 print(error.localizedDescription)
             }
         } .resume()
+    }
+    
+    func downloadData(url: String) { // Загрузка вопросов
+        guard let url = URL(string: url) else { return }
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let data = data else { return }
+            do {
+                let questions = try JSONDecoder().decode([ModelQuestions].self, from: data)
+                for element in questions {
+                    DispatchQueue.main.async {
+                        self.data89[element.question] = element.answer
+                    }
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }.resume()
+            
     }
     
     @Published var musicOff = false
@@ -54,6 +81,7 @@ class UserSettings: ObservableObject {
     @Published var detailsScoreText = "Сыграем?"
     
     @Published var timePerQuestion: Double = 5.0
+    
     @Published var numberOfQuestions = 5
 
     @Published var numberKeyList = [0,1,2,3,4,5,6,7,8,9]
@@ -78,16 +106,14 @@ class UserSettings: ObservableObject {
     
     @Published var finishPlay = false
     @Published var listQue = [Int]()
-    @Published var winWin1 = "\n\n"
-    @Published var listQue1 = UserDefaults.standard.array(forKey: "ListShowQue")
     
     @Published var questionsDoubleGame = [String]()
     @Published var answersFirstPlayerDoubleGame = [Int]()
     @Published var rightAnswersDoubleGame = [Int]()
     @Published var selectedMode = 0
-    @Published var modes = ["1", "2"]
-    @Published var playerOneName = "Кирилл"
-    @Published var playerTwoName = "Вика"
+    var modes = ["1", "2"]
+    var playerOneName = "Кирилл"
+    var playerTwoName = "Вика"
     @Published var alertAfterFirstPlay = false
 
     func textEnd(_ score: Int) -> String {
@@ -103,7 +129,7 @@ class UserSettings: ObservableObject {
         if musicOff == false {
             var nameOfSong = ""
             switch caser {
-            case(1): nameOfSong = "rightAns"
+            case(1): nameOfSong = "rightAnswer"
             case(2): nameOfSong = "victory"
             case(3): nameOfSong = "defeat"
             default: break
@@ -123,9 +149,9 @@ class UserSettings: ObservableObject {
     
     func textWinWin() -> String {
         if selectedMode == 0 {
-            return "\(botScore == 0 && peopleScore == 0 ? "" : "\(result()). \(playerOneName): \(peopleScore) балл\(textEnd(peopleScore)). Бот: \(botScore) балл\(textEnd(botScore)). \(winWin1)")"
+            return "\(botScore == 0 && peopleScore == 0 ? "" : "\(result()). \(playerOneName): \(peopleScore) балл\(textEnd(peopleScore)). Бот: \(botScore) балл\(textEnd(botScore)).\n\n")"
         } else {
-            return "\(botScore == 0 && peopleScore == 0 ? "" : "\(result()). \(playerOneName): \(peopleScore) балл\(textEnd(peopleScore)). \(playerTwoName): \(botScore) балл\(textEnd(botScore)). \(winWin1)")"
+            return "\(botScore == 0 && peopleScore == 0 ? "" : "\(result()). \(playerOneName): \(peopleScore) балл\(textEnd(peopleScore)). \(playerTwoName): \(botScore) балл\(textEnd(botScore)).\n\n")"
         }
     }
     
@@ -153,7 +179,7 @@ class UserSettings: ObservableObject {
         if selectedMode == 0 {
             if peopleScore == 0 && botScore == 0 {
                 return ""
-            }else if peopleScore > botScore {
+            } else if peopleScore > botScore {
                 return "Вы выиграли"
             } else if peopleScore < botScore {
                 return "Вы проиграли"
@@ -163,7 +189,7 @@ class UserSettings: ObservableObject {
         } else {
             if peopleScore == 0 && botScore == 0 {
                 return ""
-            }else if peopleScore > botScore {
+            } else if peopleScore > botScore {
                 return "\(playerOneName) выиграл(а)"
             } else if peopleScore < botScore {
                 return "\(playerTwoName) выиграл(а)"
@@ -173,7 +199,7 @@ class UserSettings: ObservableObject {
         }
     }
     
-    func replaceNames() {
+    func replaceNames() { // Кнопка смены имён
         let x = playerOneName
         let y = playerTwoName
         playerOneName = y
@@ -182,11 +208,11 @@ class UserSettings: ObservableObject {
     
     func genQuestionSecond() {
         repeat {
-            count = Int.random(in: Range(0...keyList1.count - 1))
+            count = Int.random(in: Range(0...data89.count - 1))
         } while listQue.contains(count)
         listQue.append(count)
         var counter = -1
-        for (questions, answers) in keyList1 {
+        for (questions, answers) in data89 {
             counter += 1
             if count == counter {
                 question = questions
@@ -219,7 +245,7 @@ class UserSettings: ObservableObject {
                 playSongRightAnswer(1)
             }
         }
-        if (keyList1.count - listQue.count) < numberOfQuestions {
+        if (data89.count - listQue.count) < numberOfQuestions {
             listQue = []
         }
         for x in 1...self.numberOfQuestions {
@@ -269,9 +295,13 @@ class UserSettings: ObservableObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + self.secondPlus, execute: {
                 self.timerColor = Color.black
                 self.timerPlay = self.timePerQuestion
-                rightAnswerNumbersDouble(peopleAnswer: self.answersFirstPlayerDoubleGame[nextQuestion], rightAnswer: self.answer) // Удаляет каунтер += правильных ответов первого игрока
-                let y = self.rightAnswerNumbers(botAnswer: Int(self.tappedText) ?? 9999999999999999, peopleAnswer: self.answersFirstPlayerDoubleGame[nextQuestion], rightAnswer: self.answer)
-                self.detailsScoreText += self.question + " \(self.playerOneName.count != 0 ? self.playerOneName : "1 игрок"): \(self.answersFirstPlayerDoubleGame[nextQuestion] != 9999999999999999 ? String(self.answersFirstPlayerDoubleGame[nextQuestion]) : "Нет ответа"), \(self.playerTwoName.count != 0 ? self.playerTwoName : "2 игрок"): \(self.tappedText.count != 0 ? self.tappedText : "Нет ответа"). " + y + self.winWin1 // текст последнего счета
+                rightAnswerNumbersDouble(peopleAnswer: self.answersFirstPlayerDoubleGame[nextQuestion],
+                                         rightAnswer: self.answer)
+                // Удаляет каунтер += правильных ответов первого игрока
+                let y = self.rightAnswerNumbers(botAnswer: Int(self.tappedText) ?? 9999999999999999,
+                                                peopleAnswer: self.answersFirstPlayerDoubleGame[nextQuestion],
+                                                rightAnswer: self.answer)
+                self.detailsScoreText += self.question + " \(self.playerOneName.count != 0 ? self.playerOneName : "1 игрок"): \(self.answersFirstPlayerDoubleGame[nextQuestion] != 9999999999999999 ? String(self.answersFirstPlayerDoubleGame[nextQuestion]) : "Нет ответа"), \(self.playerTwoName.count != 0 ? self.playerTwoName : "2 игрок"): \(self.tappedText.count != 0 ? self.tappedText : "Нет ответа"). " + y + "\n\n" // текст последнего счета
                 if self.rightImage == true {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                         self.rightImage = false
@@ -301,7 +331,7 @@ class UserSettings: ObservableObject {
         botRightAnswerCount = 0
         peopleRightAnswerCount = 0
         detailsScoreText = ""
-        if (keyList1.count - listQue.count) < numberOfQuestions {
+        if (data89.count - listQue.count) < numberOfQuestions {
             listQue = []
         }
         for x in 1...self.numberOfQuestions {
@@ -314,8 +344,10 @@ class UserSettings: ObservableObject {
                 self.cleverBot()
                 self.timerColor = Color.black
                 self.timerPlay = self.timePerQuestion
-                let y = self.rightAnswerNumbers(botAnswer: self.botGenerator, peopleAnswer: Int(self.tappedText) ?? 9999999999999999, rightAnswer: self.answer)
-                self.detailsScoreText += self.question + " \(self.playerOneName.count != 0 ? self.playerOneName : "Ваш ответ"): \(self.tappedText.count != 0 ? self.tappedText : "Нет ответа"), Бот: \(self.botGenerator). " + y + self.winWin1
+                let y = self.rightAnswerNumbers(botAnswer: self.botGenerator,
+                                                peopleAnswer: Int(self.tappedText) ?? 9999999999999999,
+                                                rightAnswer: self.answer)
+                self.detailsScoreText += self.question + " \(self.playerOneName.count != 0 ? self.playerOneName : "Ваш ответ"): \(self.tappedText.count != 0 ? self.tappedText : "Нет ответа"), Бот: \(self.botGenerator). " + y + "\n\n"
                 if self.rightImage == true {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                         self.rightImage = false

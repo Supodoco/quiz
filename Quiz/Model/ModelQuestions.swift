@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct QuestionsAnswers: Decodable {
+struct ModelQuestions: Decodable {
     
     var question: String
     var answer: Int
