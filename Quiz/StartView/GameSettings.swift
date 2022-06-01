@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameSettings: View {
     
-    @ObservedObject var checkAnswer: UserSettings
+    @ObservedObject var checkAnswer: BrainGameController
 
     var body: some View {
         

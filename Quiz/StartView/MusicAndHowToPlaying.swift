@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MusicOffAndRules: View {
-    @ObservedObject var checkAnswer: UserSettings
+    @ObservedObject var checkAnswer: BrainGameController
     let rules = "Наберите число, которое ближе к правильному ответу. Кто будет ближе к правильному ответу получает +1 балл. Правильный ответ +2 балла."
+    @State var alertVersion = false
 
     var body: some View {
         HStack {
@@ -27,6 +28,26 @@ struct MusicOffAndRules: View {
                     }
                 }
             } .modifier(buttonMod(width: 50, height: 50))
+            
+            Spacer()
+
+            Text("""
+                   Версия: \(UserDefaults.standard.integer(forKey: "version"))
+                 Вопросов: \(checkAnswer.data89.count)
+                 """)
+                    .bold()
+                    .font(.footnote)
+                    .offset(x: 0, y: -25)
+                    .onTapGesture {
+                        alertVersion.toggle()
+                    }
+                    .alert(isPresented: $alertVersion, content: {
+                      Alert(title: Text("Проверить обновление?"),
+                            primaryButton: .default(Text("Проверить"), action: {
+                           checkAnswer.checkVersionData(url: checkAnswer.urlVersionData)
+                      }),
+                              secondaryButton: .default(Text("Назад")))
+                      })
             
             Spacer()
             

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TableScores: View {
-    @ObservedObject var checkAnswer: UserSettings
+    @ObservedObject var checkAnswer: BrainGameController
 
     var body: some View {
         HStack {

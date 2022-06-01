@@ -23,7 +23,7 @@ struct buttonMod: ViewModifier {
 }
 
 struct KeyboardAndTappedText: View {
-    @ObservedObject var checkAnswer: UserSettings
+    @ObservedObject var checkAnswer: BrainGameController
     @State var lister:Array = [1,4,7]
 
     var body: some View {
@@ -56,7 +56,7 @@ struct KeyboardAndTappedText: View {
                 Button(action: {
                     if checkAnswer.tappedText.count > 0 {
                         checkAnswer.tappedText = ""
-                        print("\(checkAnswer.tappedText) 'кнопка стереть всё'")
+//                        print("\(checkAnswer.tappedText) 'кнопка стереть всё'")
                     }
                 }) {
                     Image(systemName: "clear")
@@ -64,13 +64,13 @@ struct KeyboardAndTappedText: View {
                 
                 Button("0"){
                     checkAnswer.tappedText = checkAnswer.tappedText + "\(checkAnswer.numberKeyList[0])"
-                    print(checkAnswer.tappedText)
+//                    print(checkAnswer.tappedText)
                 } .modifier(buttonMod(width: 80, height: 70))
                 
                 Button(action: {
                     if checkAnswer.tappedText.count > 0 {
                         checkAnswer.tappedText = String(checkAnswer.tappedText.prefix(checkAnswer.tappedText.count - 1))
-                        print("\(checkAnswer.tappedText) 'кнопка стереть'")
+//                        print("\(checkAnswer.tappedText) 'кнопка стереть'")
                     }
                 }) {
                     Image(systemName: "delete.left")
