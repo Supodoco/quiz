@@ -7,4 +7,4 @@ Rules:
 
 Правильный ответ +2 балла.
 
-![alt text](https://i.yapx.cc/SL7gN.png)
+![quiz](https://user-images.githubusercontent.com/76879150/171424728-0a7402a0-6761-4d74-98ff-9282a57d527b.png)
