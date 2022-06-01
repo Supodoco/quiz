@@ -1,6 +1,6 @@
 //
-//  jsndsnlApp.swift
-//  jsndsnl
+//  QuizApp.swift
+//  Quiz
 //
 //  Created by Кирилл Кучмар on 01.04.2021.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct jsndsnlApp: App {
+struct QuizApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
